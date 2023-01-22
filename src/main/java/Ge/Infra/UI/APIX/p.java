@@ -1,4 +1,4 @@
-package Ge.Infra.UI.API;
+package Ge.Infra.UI.APIX;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;

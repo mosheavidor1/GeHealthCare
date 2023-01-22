@@ -1,4 +1,4 @@
-package Ge.Infra.UI.API;
+package Ge.Infra.UI.APIX;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -6,8 +6,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
-
-import java.io.IOException;
 
 public class G {
     public static void main(String[] args) throws Exception {

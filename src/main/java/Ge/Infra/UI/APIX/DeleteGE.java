@@ -1,38 +1,35 @@
+package Ge.Infra.UI.APIX;
 
+import org.json.JSONObject;
 
-package Ge.Infra.UI.API;
-
-
-
+import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import org.json.JSONObject;
 
-public class t {
-    public static void main(String[] args) throws Exception {
-        // Create the JSON object
+public class DeleteGE {
+
+    public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException {
+        deleteBooking(9726);
+
+    }
+
+
+    public static void deleteBooking(int id) throws IOException, InterruptedException, URISyntaxException {
         JSONObject json = new JSONObject();
-        json.put("firstname", "Moshe");
-        json.put("lastname", "Avidor");
-        json.put("totalprice", 111);
-        json.put("depositpaid", true);
-        JSONObject bookingdates = new JSONObject();
-        bookingdates.put("checkin", "2013-02-23");
-        bookingdates.put("checkout", "2014-10-23");
-        json.put("bookingdates", bookingdates);
-        json.put("additionalneeds", "Breakfast");
+
 
         // Convert JSON object to String
         String jsonString = json.toString();
 
         // Create the request
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI("https://restful-booker.herokuapp.com/booking"))
-                .POST(HttpRequest.BodyPublishers.ofString(jsonString))
+                .uri(new URI("https://restful-booker.herokuapp.com/booking/"+14575))
+                .PUT(HttpRequest.BodyPublishers.ofString(jsonString))
                 .header("Content-Type", "application/json")
-                .header("Accept", "application/json")
+                .header("Cookie", "token=77faca7498b7a4c").DELETE()
                 .build();
 
         // Send the request and get the response
@@ -42,5 +39,9 @@ public class t {
         // Print the status code and response body
         System.out.println("Status code: " + response.statusCode());
         System.out.println("Response body: " + response.body());
+      //  GetGE getGE =new GetGE();
+
     }
 }
+
+
